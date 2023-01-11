@@ -1,0 +1,43 @@
+project_name: meadow
+
+builds:
+  - 
+    binary: meadow
+    goos:
+      - darwin
+      - linux
+      - windows
+    goarch:
+      - amd64
+      - arm64
+
+release:
+  prerelease: auto
+
+universal_binaries:
+  - replace: true
+
+brews:
+  -
+    name: meadow
+    homepage: "https://github.com/devops-kung-fu/meadow"
+    tap:
+      owner: devops-kung-fu
+      name: homebrew-tap
+    commit_author:
+      name: djschleen
+      email: admin@dkfm.io
+
+checksum:
+  name_template: 'checksums.txt'
+
+nfpms:
+  - 
+    maintainer: DevOps Kung Fu Mafia <admin@dkfm.io>
+    description: "Generates Go code which connects to GTK objects defined in a Glade file"
+    homepage: https://github.com/devops-kung-fu/meadow
+    license: MPL
+    formats:
+      - deb
+      - rpm
+
